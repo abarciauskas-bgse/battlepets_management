@@ -1,3 +1,4 @@
+ENV['RAILS_ENV'] ||= 'test'
 default_attributes = YAML.load_file('config/default_attributes.yml')[ENV.fetch("RAILS_ENV")]
 
 ATTRIBUTES_LIMIT = default_attributes['limit']
