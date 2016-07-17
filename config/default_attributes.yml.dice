@@ -1,0 +1,12 @@
+default: &default
+  limit:  <%= configured.default_wit || 100 %>
+  wit: <%= configured.default_wit || 25 %>
+  strength: <%= configured.default_strength || 25 %>
+  senses: <%= configured.default_senses || 25 %>
+  agility: <%= configured.default_agility || 25 %>
+
+development:
+  <<: *default
+
+test:
+  <<: *default
