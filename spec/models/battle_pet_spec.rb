@@ -39,4 +39,12 @@ describe BattlePet, type: :model do
       end
     end
   end
+
+  describe 'slug' do
+    let(:totoro) { BattlePet.create!(name: 'My Pet Totoro') }
+
+    it 'is the name downcased with spaces removed' do
+      expect(totoro.slug).to eq('my_pet_totoro')
+    end
+  end
 end

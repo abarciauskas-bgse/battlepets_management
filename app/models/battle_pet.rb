@@ -28,4 +28,8 @@ class BattlePet < ApplicationRecord
   def attributes_as_array
     [self.wit, self.strength, self.agility, self.senses]
   end
+
+  def slug
+    self.name.downcase.gsub(" ", "_")
+  end
 end

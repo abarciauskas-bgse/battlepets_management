@@ -135,6 +135,7 @@ Possible moves are seeded during app initiation.
 ### Technical implementation
 
 * use a pet builder
+* error on unpermitted attributes?
 
 ### Features
 
