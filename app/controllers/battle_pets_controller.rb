@@ -25,6 +25,7 @@ class BattlePetsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def battle_pet_params
+    # TODO: Fixme
     params.require(:battle_pet)#.permit(:name, :traits)
   end
 end
