@@ -21,4 +21,6 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+# TODO:
+
+* Cleanup json serialization of BattlePet for BattlePetsController#show

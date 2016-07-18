@@ -3,11 +3,11 @@ class BattlePetsController < ApplicationController
 
   # GET /battle_pets/1
   def show
-    render json: @battle_pet
+    render json: @battle_pet.attributes.to_h.merge({traits: @battle_pet.traits.to_a})
   end
 
   # POST /battle_pets
-  def create    
+  def create   
     @battle_pet = BattlepetBuilder.new(battle_pet_params).battle_pet
 
     if @battle_pet.save
@@ -20,7 +20,7 @@ class BattlePetsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_battle_pet
-    @battle_pet = BattlePet.find(params[:id])
+    @battle_pet = BattlePet.where(id: params[:id]).first || BattlePet.where(name: params[:id]).first
   end
 
   # Only allow a trusted parameter "white list" through.
