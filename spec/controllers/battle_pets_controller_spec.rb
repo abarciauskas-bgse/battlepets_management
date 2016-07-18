@@ -24,7 +24,6 @@ RSpec.describe BattlePetsController, type: :controller do
   # BattlePet. As you add validations to BattlePet, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) { {name: 'Totoro'} }
-  let(:invalid_attributes) { {superpower: 'invisibility'} }
 
   describe "GET #show" do
     it "assigns the requested battle_pet as @battle_pet" do
@@ -49,7 +48,7 @@ RSpec.describe BattlePetsController, type: :controller do
 
       context 'with specified skills' do
         let(:valid_attributes) do
-          {name: 'Totoro', strength: 80, wit: 1, agility: 9, senses: 5}
+          {name: 'Totoro', traits: {strength: 80, wit: 1, agility: 9, senses: 5}}
         end
 
         it "creates a new BattlePet" do
@@ -60,21 +59,8 @@ RSpec.describe BattlePetsController, type: :controller do
 
         it "creates a BattlePet with the specified params" do
           post :create, params: {battle_pet: valid_attributes}
-          expect(BattlePet.last.strength).to eq(valid_attributes[:strength])
+          expect(BattlePet.last.trait('strength')).to eq(valid_attributes[:traits][:strength])
         end
-      end
-    end
-
-    context "with invalid params" do
-      it "assigns a newly created but unsaved battle_pet as @battle_pet" do
-        post :create, params: {battle_pet: invalid_attributes}
-        expect(assigns(:battle_pet)).to be_a_new(BattlePet)
-      end
-
-      it "does not create a new BattlePet" do
-        expect {
-          post :create, params: {battle_pet: invalid_attributes}
-        }.not_to change(BattlePet, :count)
       end
     end
   end

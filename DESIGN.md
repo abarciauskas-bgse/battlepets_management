@@ -19,10 +19,12 @@ All pets have an initial set of actions (as seeded by app) having different poss
 ```json
 {
     "name": "Totoro",
-    "wit": 25,
-    "strength": 25,
-    "agility": 25,
-    "senses": 25
+    "traits": {
+        "wit": 25,
+        "strength": 25,
+        "agility": 25,
+        "senses": 25
+    }
 }
 ```
 
@@ -30,13 +32,10 @@ All pets have an initial set of actions (as seeded by app) having different poss
 
 _Persistent Characteristics_
 
-All characterstics will default to a value if left unspecified, but may be specified. This is a socialist game so the sum of each pet's characteristics must be equal to or less than 100.
+Pets will have default traits if traits are not specified upon creation. To keep things socialist, during app initialization a limit may be specified so that pets cannot have arbitrarily high traits.
 
 * `name`
-* `wit`: integer, 0-100
-* `strength`: integer, 0-100
-* `agility`: integer, 0-100
-* `senses`: integer, 0-100
+* `traits`: one or more attributes having a numeric value.
 
 _[v2]_
 

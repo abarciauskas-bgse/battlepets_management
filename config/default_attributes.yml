@@ -1,12 +1,6 @@
-default: &default
-  limit:  100
+limit:  100
+traits:
   wit: 25
   strength: 25
   senses: 25
   agility: 25
-
-development:
-  <<: *default
-
-test:
-  <<: *default

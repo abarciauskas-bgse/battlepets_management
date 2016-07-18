@@ -1,7 +1,8 @@
 ## Rails generators
 
 ```bash
-rails g scaffold BattlePets name:string:uniq wit:integer strength:integer agility:integer senses:integer
+rails g scaffold BattlePet name:string:uniq
+rails g model BattlepetTrait name:string value:integer battle_pet:references
 rake db:migrate
 rake db:migrate RAILS_ENV=test
 ```
