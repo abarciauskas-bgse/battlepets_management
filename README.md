@@ -14,7 +14,7 @@ Battlepets Management owns battlepets and their traits. For the API see **[DESIG
 
 ```
 git clone https://github.com/abarciauskas-bgse/battlepets_management
-cd battlepets_arena
+cd battlepets_management
 bundle install
 ```
 
