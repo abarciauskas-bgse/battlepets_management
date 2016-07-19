@@ -64,7 +64,7 @@ Response:
     * HTTP Resonse Status: 201
     * HTTP Resonse Body: _See Pet Resource Representation_
 
-**`GET /pets/:name`**
+**`GET /battle_pets/:name`**
 
 _Returns the representation of the pet with :name_
 
