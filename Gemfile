@@ -21,6 +21,7 @@ gem 'puma', '~> 3.0'
 # gem 'rack-cors'
 
 gem 'dice_bag', '~> 1.1'
+gem 'active_model_serializers', '~> 0.10'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -38,7 +39,7 @@ group :development do
 end
 
 group :test do
-  gem "shoulda-matchers", '~> 3.1'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

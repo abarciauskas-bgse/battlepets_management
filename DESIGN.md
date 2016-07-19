@@ -18,13 +18,14 @@ All pets have an initial set of actions (as seeded by app) having different poss
 
 ```json
 {
-    "name": "Totoro",
-    "traits": {
-        "wit": 25,
-        "strength": 25,
-        "agility": 25,
-        "senses": 25
-    }
+    "name": "Hamtaro",
+    "serialized_traits": [{
+        "name": "wit",
+        "value": 70
+    }, {
+        "name": "strength",
+        "value": 30
+    }]
 }
 ```
 

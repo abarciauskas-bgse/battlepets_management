@@ -3,7 +3,7 @@ class BattlePetsController < ApplicationController
 
   # GET /battle_pets/1
   def show
-    render json: @battle_pet.attributes.to_h.merge({traits: @battle_pet.traits.to_a})
+    render json: @battle_pet
   end
 
   # POST /battle_pets
