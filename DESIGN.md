@@ -85,14 +85,6 @@ _Returns a list of all existing pets_
 
 **`PATCH /pets/:name`: updates to health, experience, or skills**
 
-### Battle Actions and Battle Moves
-
-* `type`: step, jump, leap, run, swim
-* `direction`
-* `force`
-
-Possible moves are seeded during app initiation.
-
 # Future Improvements
 
 * Should there be functionality to clone existing pets? Say a user wants to battle the same pet by creating a duplicate of it.
