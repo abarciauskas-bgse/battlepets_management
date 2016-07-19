@@ -2,13 +2,13 @@
 
 KISS (Keep It Simple Stupid): The API is simple, while adding flexibility where there is easily a use case for additional configurability requried clients. For example, battlepet traits default to those listed by the original spec (wit, senses, strength, agility), but can be any name / value pair.
 
-## Resources
+# Resources
 
-### Pets
+## BattlePets
 
 All pets have an initial set of actions (as seeded by app) having different possible forces and ante-forces.
 
-#### Pet Resource Representation
+#### BattlePet Resource Representation
 
 ```json
 {
@@ -23,7 +23,7 @@ All pets have an initial set of actions (as seeded by app) having different poss
 }
 ```
 
-#### Pet Resource Attributes
+#### BattlePet Resource Attributes
 
 _Persistent Characteristics_
 
@@ -31,15 +31,6 @@ Pets will have default traits if traits are not specified upon creation. To keep
 
 * `name`
 * `traits`: one or more attributes having a numeric value.
-
-_[v2]_
-
-* `animal`: different default attributes
-* `health`: numerical value (range initiated by app), decreases during battle, increases time spent way from battle plus feeding
-* `actions`: set of battle actions the pet is capable of, e.g. spelling, kicking and punchting
-* `moves`: set of battle moves the pet is capable of, e.g. walking, running
-* `special_actionz`: initially none, may become karate chopping or fireballing, etc.
-* `special_movez`: initially none, but may become swimming, jumping, flying, etc.
 
 #### BattlePet Resource Actions
 
@@ -73,9 +64,16 @@ Response:
     * HTTP Resonse Status: 200
     * HTTP Resonse Body: _See Pet Resource Representation_
 
-____
+# Version 2
 
-_[v2]_
+## (Additional) BattlePets
+
+* `animal`: different default attributes
+* `health`: numerical value (range initiated by app), decreases during battle, increases time spent way from battle plus feeding
+* `actions`: set of battle actions the pet is capable of, e.g. spelling, kicking and punchting
+* `moves`: set of battle moves the pet is capable of, e.g. walking, running
+* `special_actionz`: initially none, may become karate chopping or fireballing, etc.
+* `special_movez`: initially none, but may become swimming, jumping, flying, etc.
 
 **Resource Actions**
 
@@ -83,30 +81,11 @@ _[v2]_
 
 _Returns a list of all existing pets_
 
-* Required parameters: none
-* Successful Response:
-    * HTTP Status: 200
-    * HTTP Body: List of battlepet resources
-
 **`PUT,DELETE /pets/:name`**
-
-[ADD ME]
 
 **`PATCH /pets/:name`: updates to health, experience, or skills**
 
-Request:
-
-* Required parameters: `:name`
-
-Response:
-
-* Successful Response:
-    * HTTP Resonse Status: 204
-    * HTTP Resonse Body: No Content
-    * HTTP Response Headers:
-        * Content-Location `/pets/:name`
-
-### _[v2]_ Battle Actions
+### Battle Actions
 
 **Resource Attributes**
 
@@ -117,7 +96,7 @@ Response:
 
 Possible actions are seeded during app initiation.
 
-### _[v2]_ Battle ActionsBattle Moves
+### Battle Actions and Battle Moves
 
 * `type`: step, jump, leap, run, swim
 * `direction`
@@ -125,14 +104,7 @@ Possible actions are seeded during app initiation.
 
 Possible moves are seeded during app initiation.
 
-## Ideas
-
-### Technical implementation
-
-* use a pet builder
-* error on unpermitted attributes?
-
-## Future Improvements
+# Future Improvements
 
 * Should there be functionality to clone existing pets? Say a user wants to battle the same pet by creating a duplicate of it.
 * Train a pet builds actions and moves, but only when healthy
