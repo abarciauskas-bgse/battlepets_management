@@ -79,11 +79,11 @@ Response:
 
 **`GET /pets`**
 
-_Returns a list of all existing pets_
-
 **`PUT,DELETE /pets/:name`**
 
-**`PATCH /pets/:name`: updates to health, experience, or skills**
+**`PATCH /pets/:name`**
+
+_Updates to health, traits, actions, or moves**
 
 # Future Improvements
 
