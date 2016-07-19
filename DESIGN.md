@@ -1,12 +1,6 @@
 # Design
 
-## Principles
-
-* KISS
-    * Only implement resources which are required by spec
-* Don't create constraints or functionality where there is not yet a business case for them
-    * In this instance, I create the business case outside of the specification, so there are really no constraints
-    * Reasonable constraints are maintained where they are necessary for application logic (e.g. can't have multiple pets of the same name)
+KISS (Keep it simple stupid): I kept the API as simple as possible, while adding flexibility where I could easily see a case for extending configurability in clients. For example, battlepet traits default to those listed by the spec, but can be any name / value pair.
 
 ## Resources
 
@@ -138,16 +132,12 @@ Possible moves are seeded during app initiation.
 * use a pet builder
 * error on unpermitted attributes?
 
-### Features
+## Future Improvements
 
-[Inspired by Tamagotchi](https://en.wikipedia.org/wiki/Tamagotchi)
+* Should there be functionality to clone existing pets? Say a user wants to battle the same pet by creating a duplicate of it.
+* Train a pet builds actions and moves, but only when healthy
+
+#### [Inspired by Tamagotchi](https://en.wikipedia.org/wiki/Tamagotchi)
 
 * Lifecycle - having an age that progresses in real time such that younger and older pets are weaker than adult pets
 * Marriage and procreation
-
-My ideas
-
-* pets can have superpowers - perhaps only if the user is a power user
-* should there be functionality to clone existing pets? Say a user wants to battle the same pet by creating a duplicate of it.
-* train a pet builds actions and moves, but only when healthy
-
