@@ -47,14 +47,16 @@ _[v2]_
 * `special_actionz`: initially none, may become karate chopping or fireballing, etc.
 * `special_movez`: initially none, but may become swimming, jumping, flying, etc.
 
-#### Pet Resource Actions
+#### BattlePet Resource Actions
 
-**`POST /pets`**
+**`POST /battle_pets`**
+
+_Creates a new battle pet. If no traits are specified, a set of defaults will be configured as determined by `/config/default_attributes.rb`._
 
 Request:
 
-* Required parameters: none
-* Optional parameters: `name, animal, wit, strength, agility, senses`
+* Required parameters: `name`
+* Optional parameters: `traits`: a dictionary mapping trait names to values.
 
 Response:
 
@@ -77,21 +79,6 @@ Response:
     * HTTP Resonse Status: 200
     * HTTP Resonse Body: _See Pet Resource Representation_
 
-* `PATCH /pets/:name`: updates to health, experience, or skills
-
-Request:
-
-* Required parameters: `:name`
-
-Response:
-
-* Successful Response:
-    * HTTP Resonse Status: 204
-    * HTTP Resonse Body: No Content
-    * HTTP Response Headers:
-        * Content-Location `/pets/:name`
-
-
 ____
 
 _[v2]_
@@ -105,11 +92,25 @@ _Returns a list of all existing pets_
 * Required parameters: none
 * Successful Response:
     * HTTP Status: 200
-    ```json
-    ```
+    * HTTP Body: List of battlepet resources
 
-* `PUT,DELETE /pets/:name`
+**`PUT,DELETE /pets/:name`**
 
+[ADD ME]
+
+**`PATCH /pets/:name`: updates to health, experience, or skills**
+
+Request:
+
+* Required parameters: `:name`
+
+Response:
+
+* Successful Response:
+    * HTTP Resonse Status: 204
+    * HTTP Resonse Body: No Content
+    * HTTP Response Headers:
+        * Content-Location `/pets/:name`
 
 ### _[v2]_ Battle Actions
 
