@@ -1,6 +1,6 @@
 # Design
 
-KISS (Keep it simple stupid): I kept the API as simple as possible, while adding flexibility where I could easily see a case for extending configurability in clients. For example, battlepet traits default to those listed by the spec, but can be any name / value pair.
+KISS (Keep It Simple Stupid): The API is simple, while adding flexibility where there is easily a use case for additional configurability requried clients. For example, battlepet traits default to those listed by the original spec (wit, senses, strength, agility), but can be any name / value pair.
 
 ## Resources
 
