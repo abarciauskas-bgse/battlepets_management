@@ -85,17 +85,6 @@ _Returns a list of all existing pets_
 
 **`PATCH /pets/:name`: updates to health, experience, or skills**
 
-### Battle Actions
-
-**Resource Attributes**
-
-* `name`: Name for action, e.g.: `kick, punch, shield, karate chop` etc.
-* `force`: positive or negative value. (e.g. offensive or defensive)
-    * If positive, indicates a defensive action which reduces impact of opponents action.
-    * If negative, indicates an offensive action impacting opponents health.
-
-Possible actions are seeded during app initiation.
-
 ### Battle Actions and Battle Moves
 
 * `type`: step, jump, leap, run, swim
