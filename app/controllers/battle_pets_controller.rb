@@ -8,7 +8,7 @@ class BattlePetsController < ApplicationController
 
   # POST /battle_pets
   def create   
-    @battle_pet = BattlepetBuilder.new(battle_pet_params).battle_pet
+    @battle_pet = BattlepetBuilder.new(params).battle_pet
 
     if @battle_pet.save
       render json: @battle_pet, status: :created, location: @battle_pet
@@ -25,7 +25,7 @@ class BattlePetsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def battle_pet_params
-    # TODO: Fixme
-    params.require(:battle_pet)#.permit(:name, :traits)
+    # TODO: FIXME
+    params.require(:battle_pet).permit(:name, :traits => {})
   end
 end

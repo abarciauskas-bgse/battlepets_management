@@ -24,3 +24,4 @@ Things you may want to cover:
 # TODO:
 
 * Cleanup json serialization of BattlePet for BattlePetsController#show
+* Use postgresql [json types](http://www.tutorialspoint.com/postgresql/postgresql_data_types.htm) for battlepet traits

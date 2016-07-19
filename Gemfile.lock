@@ -41,6 +41,7 @@ GEM
     arel (7.0.0)
     builder (3.2.2)
     byebug (9.0.5)
+    coderay (1.1.1)
     concurrent-ruby (1.0.2)
     dice_bag (1.1.1)
       diff-lcs (~> 1.0)
@@ -71,6 +72,10 @@ GEM
       pkg-config (~> 1.1.7)
     pg (0.18.4)
     pkg-config (1.1.7)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     puma (3.4.0)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -125,6 +130,7 @@ GEM
     rspec-support (3.5.0)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
+    slop (3.6.0)
     spring (1.7.2)
     spring-watcher-listen (2.0.0)
       listen (>= 2.7, < 4.0)
@@ -151,13 +157,14 @@ DEPENDENCIES
   byebug
   dice_bag (~> 1.1)
   listen (~> 3.0.5)
-  pg
+  pg (~> 0.18)
+  pry (~> 0.10)
   puma (~> 3.0)
   rails (~> 5.0.0)
-  rails-controller-testing
+  rails-controller-testing (~> 0.1)
   rspec-rails (~> 3.4)
-  shoulda-matchers
-  spring
+  shoulda-matchers (~> 3.1)
+  spring (~> 1.7)
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
 

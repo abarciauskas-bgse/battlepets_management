@@ -19,28 +19,28 @@ RSpec.describe BattlePetsController, type: :controller do
     context "with valid params" do
       it "creates a new BattlePet" do
         expect {
-          post :create, params: {battle_pet: valid_attributes}
+          post :create, params: valid_attributes
         }.to change(BattlePet, :count).by(1)
       end
 
       it "redirects to the created battle_pet" do
-        post :create, params: {battle_pet: valid_attributes}
+        post :create, params: valid_attributes
         expect(response).to be_success
       end
 
       context 'with specified skills' do
         let(:valid_attributes) do
-          {name: 'Totoro', traits: {strength: 80, wit: 1, agility: 9, senses: 5}}
+          {name: 'Totoro10', traits: {strength: 80, wit: 1, agility: 9, senses: 5}}
         end
 
         it "creates a new BattlePet" do
           expect {
-            post :create, params: {battle_pet: valid_attributes}
+            post :create, params: valid_attributes
           }.to change(BattlePet, :count).by(1)
         end
 
         it "creates a BattlePet with the specified params" do
-          post :create, params: {battle_pet: valid_attributes}
+          post :create, params: valid_attributes
           expect(BattlePet.last.trait('strength')).to eq(valid_attributes[:traits][:strength])
         end
       end
